@@ -1,4 +1,4 @@
-export default function Chevron() {
+export default function ChevronBottomIcon() {
   return (
     <svg
       width="16"

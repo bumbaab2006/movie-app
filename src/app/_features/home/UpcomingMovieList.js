@@ -28,7 +28,6 @@ function Upcoming() {
     getData();
   }, []);
 
-  // 👇 Show more / Show less логик
   const moviesToShow = showAll ? movieData : movieData.slice(0, 10);
 
   return (
@@ -38,7 +37,7 @@ function Upcoming() {
         {movieData.length > 10 && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="w-[120px] h-[36px] rotate-0 opacity-100 gap-[8px] pt-2 pr-4 pb-2 pl-4 rounded-md flex bg-gray-800 text-white"
+            className="w-[120px] h-[36px] rotate-0 opacity-100 gap-[8px] pt-2 pr-4 pb-2 pl-4 rounded-md flex"
           >
             {showAll ? "Show less" : "See more"}
           </button>

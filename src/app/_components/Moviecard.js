@@ -1,41 +1,38 @@
 "use client";
-import Star from "../_icons/Star";
+import StarIcon from "../_icons/StarIcon";
+import { useRouter } from "next/navigation";
 
-function Moviecard({ title, rating, image }) {
+function Moviecard({ id, title, rating, image, className }) {
+  const router = useRouter();
+
   const imageUrl = image
-    ? `https://image.tmdb.org/t/p/w500${image}`
+    ? `https://image.tmdb.org/t/p/original${image}`
     : "/placeholder.jpg";
 
   return (
-    <div className="w-[229.73px] h-[439px] rotate-0 opacity-100 gap-[4px] rounded-lg bg-[#F4F4F5]">
-      <div className="w-[229.73px] h-[340px] rotate-0 opacity-100">
+    <button
+      className={`${className}`}
+      onClick={() => router.push(`/movie/${id}`)}
+    >
+      <div className="w-[229.73px] h-[340px]">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover rounded-t-lg"
+          className="w-fit h-full object-cover rounded-t-lg"
         />
       </div>
-      <div className="w-[229.73px] h-[95px] rotate-0 opacity-100 p-2">
-        <div className="w-[213.73px] h-[23px] gap-[4px] rotate-0 opacity-100 flex">
-          <div className="items-center justify-center flex flex-row">
-            <Star />
-            <div className="w-[193.73px] h-[23px] rotate-0 opacity-100 flex items-center">
-              <div className="font-inter font-normal text-[12px] leading-[16px] tracking-normal">
-                {rating !== undefined && rating !== null
-                  ? rating.toFixed(1)
-                  : "N/A"}
-                /10
-              </div>
-            </div>
-          </div>
+      <div className="p-2">
+        <div className="flex items-center gap-1">
+          <StarIcon />
+          <span className="text-sm">
+            {rating ? rating.toFixed(1) : "N/A"}/10
+          </span>
         </div>
-        <div className="w-[213.73px] h-[56px] gap-[10px] rotate-0 opacity-100 flex">
-          <p className="font-inter font-normal text-[18px] leading-[28px] tracking-normal">
-            {title}
-          </p>
-        </div>
+        <p className="text-[18px] leading-[28px] justify-start w-max-[56px]">
+          {title}
+        </p>
       </div>
-    </div>
+    </button>
   );
 }
 

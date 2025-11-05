@@ -1,6 +1,6 @@
-import VectorWhite from "../_icons/VectorWhite";
-import Email from "../_icons/Email";
-import Phone from "../_icons/Phone";
+import VectorWhite from "../_icons/VectorWhiteIcon";
+import Email from "../_icons/EmailIcon";
+import Phone from "../_icons/PhoneIcon";
 function Footer() {
   return (
     <div className="w-[1440px] h-[280px] pt-10 pb-10 gap-[48px] px-4 rotate-0 opacity-100 flex justify-center items-center  top-[320px] left-[20px] bg-[#4338CA]">

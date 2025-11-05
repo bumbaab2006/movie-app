@@ -25,7 +25,6 @@ function Popular() {
   useEffect(() => {
     getData();
   }, []);
-  console.log(movieData);
   return (
     <div className="flex w-[1437px] gap-[32px] pr-[80px] pl-[80px] flex-col">
       <div className="flex w-[1277px] h-[36px] justify-between rotate-0 opacity-100">
