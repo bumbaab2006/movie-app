@@ -136,8 +136,6 @@ export default function MoviePage() {
           />
         </div>
       </div>
-
-      {/* Товч танилцуулга */}
       <div className="w-[1080px] flex flex-col gap-2">
         <p className="font-inter text-[16px] leading-[24px] text-gray-800">
           {movieDetails.overview}
